@@ -14,9 +14,14 @@
   <body class="container-fluid">
     <div class="row">
       <div class="col">
-        <h2>Recruit</h2>
-        <p>First Name: {{object.fname}}</p>
-        <p>Age: {{object.age}}</p>
+        <h2>List of All Recruits</h2>
+        <ul>
+        {% for i in object_list %}
+          <li>
+            <a href="{% url 'recruit' i.pk %}">{{i.fname}}</a>
+        </li>
+        {% endfor %}
+      </ul>
       </div>
     </div>
 
